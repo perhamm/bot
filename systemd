@@ -1,0 +1,17 @@
+# /etc/systemd/system/bot.service
+# /etc/systemd/system/bot.service
+[Unit]
+Description=Job that runs the python bot daemon
+
+[Service]
+user=root
+Type=idle
+WorkingDirectory=/home/admin/Desktop/bot/
+ExecStart=/usr/bin/python bot.py 
+TimeoutStopSec=1
+Restart=always
+RestartSec=2
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target
